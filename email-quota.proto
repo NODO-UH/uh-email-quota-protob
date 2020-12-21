@@ -1,0 +1,19 @@
+
+syntax = "proto3";
+
+option go_package = "github.com/NODO-UH/uh-email-quota-protob;uh_email_quota_protob";
+
+package routeguide;
+
+service EmalQuota {
+  rpc GetQuota(UserData) returns (UserQuota);
+}
+
+message UserData {
+    string user = 1;
+}
+
+message UserQuota {
+    int64 value = 1;
+    int64 limit = 2;
+}
